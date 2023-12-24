@@ -6,11 +6,11 @@ export default function Home() {
           <div className="mt-10">
             <nav className='flex flex-row items-center justify-between'>
             <a className="inline-block"> <span ><h1 className="font-bold text-xl">Alejandro Heredia</h1></span></a>
-              <div className='flex space-x-4 w-1/2 justify-between font-thin'>
-                <a>Linkedin</a>
-                <a>Github</a>
-                <a>Twitter</a>
-                <a>Blog</a>
+              <div className='flex space-x-4 w-1/2 justify-between font-thin align-center'>
+                <NavbarItem label='Linkedin' href=''/>
+                <NavbarItem label='Github' href=''/>
+                <NavbarItem label='Twitter' href=''/>
+                <NavbarItem label='Blog' href=''/> 
               </div>
             </nav>
           </div>
@@ -26,9 +26,13 @@ export default function Home() {
           <button className="w-36 h-12 bg-[#8C8C8C] font-bold rounded mt-5">Contact Me</button>
         </section>
         <footer className="h-10">
-          <a>Source</a>
+          <a className="font-thin border-b border-gray-300 transition-[border-color] hover:border-[#8C8C8C]" target="_blank">Source</a>
         </footer>
       </div>
     </main>
   )
+}
+
+function NavbarItem({label, href}: {label: string, href: string}): JSX.Element{
+  return <a className="border-b border-transparent hover:border-[#8C8C8C] transition-[border-color]" target="_blank" href={href}>{label}</a>
 }
