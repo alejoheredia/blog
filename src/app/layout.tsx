@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Roboto_Flex } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css'
 
 const robotoFlex = Roboto_Flex({ 
@@ -20,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={robotoFlex.variable}>{children}</body>
+      <body className={robotoFlex.variable}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
